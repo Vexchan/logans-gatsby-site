@@ -1,9 +1,10 @@
 /* 
-pass: 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
+pass: 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
 */
 import * as React from 'react'
 import Layout from '../components/layout'
 import { StaticImage } from 'gatsby-plugin-image'
+import Seo from '../components/seo'
 
 const IndexPage = () => {
   return (
@@ -17,6 +18,6 @@ const IndexPage = () => {
   )
 }
 
-export const Head = () => <title>Home Page</title>
+export const Head = () => <Seo title="Home Page" />
 
 export default IndexPage
