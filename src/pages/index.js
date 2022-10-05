@@ -1,5 +1,5 @@
 /* 
-pass: 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
+pat: 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
 */
 import * as React from 'react'
 import Layout from '../components/layout'
