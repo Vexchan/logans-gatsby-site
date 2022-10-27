@@ -28,7 +28,7 @@ exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
   return new Promise((resolve, reject) => {
     // const articleTemplate = path.resolve(`src/templates/node/article/index.js`)
-    const pageTemplate = path.resolve(`src/pages/recipe.js`)
+    const pageTemplate = path.resolve(`src/components/recipe.js`)
     //const horseTemplate = path.resolve(`src/pages/catalogpage.js`)
     // const categoryTemplate = path.resolve(`src/templates/taxonomy/tag/index.js`)
 
