@@ -8,9 +8,11 @@ const path = require('path');
 //   return config;
 // };  
 
+
+
 // Create a slug for each recipe and set it as a field on the node.
 exports.onCreateNode = ({ node, getNode, actions }) => {
-  
+  //console.log(node);
   const { createNodeField } = actions
   const slug = (node.path && node.path.alias) ? node.path.alias : '/node/' + node.drupal_id; 
   createNodeField({
@@ -35,9 +37,11 @@ exports.createPages = ({ actions, graphql }) => {
     // field_ragozin_sheet throws graphql errors
     resolve(
       graphql(
-        `{
-          Drupal {
-            nodeRecipes(first:10) {
+        `
+
+query MyQuery {
+  Drupal {
+            nodeRecipes(first: 100) {
               edges {
                 node {
                   changed
@@ -47,35 +51,48 @@ exports.createPages = ({ actions, graphql }) => {
                   path
                   status
                   title
+                  preparationTime
+                  difficulty
+                  numberOfServings
+                  recipeCategory {
+                    name
+                  }
+                  tags {
+                    name
+                  }
+                  recipeInstruction {
+                    value
+                  }
                 }
               }
             }
           }
-        }
+  }
+
+
 `
       ).then(result => {
         // shows during build/dev
         //console.log("RESULT");
-        console.log(result.data);
+        //console.log(result);
         if (result.errors) {
           reject(result.errors)
         }
-        const pages = result.data.Drupal.nodeRecipes.edges;
+        const pages = result.data.Drupal.nodeRecipes.edges; 
+
         
         //result.data.allNodeHorse.edges.forEach(({ node }, index) => {
         pages.forEach(({ node }, index) => {
-          const page_path = (node.path && node.path.alias) ? node.path.alias : '/node/' + node.drupal_id; 
-         
+          //console.log(node);
+          //const page_path = (node.path && node.path.alias) ? node.path.alias : '/node/' + node.drupal_id; 
+          const page_path = node.path
 
           createPage({
             path: `${page_path}`,
-          
             component: pageTemplate,
             context: {
               nid: node.id,  
-              prev: node.prev,
-              next: node.next,
-              data: node.data, 
+              data: node, 
             },
           })
         })

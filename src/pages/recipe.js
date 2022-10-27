@@ -1,38 +1,34 @@
-import { Link, useStaticQuery, graphql } from 'gatsby'
-import * as React from 'react'
-import Layout from '../components/layout'
+import { graphql } from 'gatsby'
+import React from 'react'
 
-const RecipePage = () => {
-    const data = useStaticQuery(graphql`
-    {
-  Drupal {
-    nodeRecipes(first: 10) {
-      edges {
-        node {
-          title
-        }
-      }
-    }
+const pageTemplate = props => {
+
+ const data = {
+	  nodeFood:  props.pageContext.data
   }
-}
-  `)
-  console.log(data.Drupal.nodeRecipes.edges);
+var categoryList = "";
+var tagsList = "";
+
+data.nodeFood.recipeCategory.forEach(( {name}, index ) => {
+  categoryList += (name + " ");
+})
+data.nodeFood.tags.forEach(( {name}, index ) => {
+  tagsList += (name + " ");
+})
 
   return (
-    <Layout pageTitle="Recipe Page">
-      {
-        data.Drupal.nodeRecipes.edges.forEach(({ node }, index) => (
-          <article key={node.id}>
-            <h2>
-                {node}
-            </h2>
-            <p></p>
-            <p></p>
-          </article>
-        ))
-      }
-    </Layout>
-  )
-  }
+    <>
+      <h2>{data.nodeFood.title}</h2>
+      <h2> Cooking Time: {data.nodeFood.cookingTime} Minutes </h2>
+      <h2> Prep Time: {data.nodeFood.preparationTime} Minutes</h2>
+      <h2> Difficulty: {data.nodeFood.difficulty} </h2>
+      <h2> Number of Servings: {data.nodeFood.numberOfServings} </h2>
+      <h2> Category: {categoryList} </h2>
+      <h2> Tags: {tagsList} </h2>
+      <h2> Instructions: {data.nodeFood.recipeInstruction.value} </h2>
 
-export default RecipePage
+    </>
+    )}
+
+
+export default pageTemplate 
