@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby'
 import React from 'react'
-//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
+
 const pageTemplate = props => {
 
  const data = {
@@ -17,6 +17,7 @@ data.nodeFood.tags.forEach(( {name}, index ) => {
 })
 
   return (
+    
     <>
       <h2>{data.nodeFood.title}</h2>
       <h2> Cooking Time: {data.nodeFood.cookingTime} Minutes </h2>
@@ -25,7 +26,11 @@ data.nodeFood.tags.forEach(( {name}, index ) => {
       <h2> Number of Servings: {data.nodeFood.numberOfServings} </h2>
       <h2> Category: {categoryList} </h2>
       <h2> Tags: {tagsList} </h2>
-      <h2> Instructions: {data.nodeFood.recipeInstruction.value} </h2>
+      <h2> Instructions: <div
+      dangerouslySetInnerHTML={{__html: data.nodeFood.recipeInstruction.value}}
+    />
+    </h2>
+      
 
     </>
     )}
