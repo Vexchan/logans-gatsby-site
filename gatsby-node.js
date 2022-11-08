@@ -63,6 +63,13 @@ query MyQuery {
                   recipeInstruction {
                     value
                   }
+                  mediaImage {
+                    mediaImage {
+                      url
+                      height
+                      width
+                    }
+                  }
                 }
               }
             }

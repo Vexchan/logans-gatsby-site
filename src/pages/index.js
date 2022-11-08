@@ -1,6 +1,3 @@
-/* 
-pat: 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
-*/
 import * as React from 'react'
 import Layout from '../components/layout'
 import { StaticImage } from 'gatsby-plugin-image'

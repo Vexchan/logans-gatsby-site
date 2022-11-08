@@ -1,5 +1,8 @@
-import { graphql } from 'gatsby'
 import React from 'react'
+import Title from '../components/title.js';
+import RecipeHolder from '../components/recipeHolder.js';
+import ColLeft from '../components/colLeft.js';
+import { StaticImage } from 'gatsby-plugin-image'
 
 const pageTemplate = props => {
 
@@ -16,7 +19,16 @@ data.nodeFood.tags.forEach(( {name}, index ) => {
   tagsList += (name + " ");
 })
 
-  return (
+const img = data.nodeFood.mediaImage.mediaImage.url;
+
+return (
+  <RecipeHolder>
+    <Title> {data.nodeFood.title} </Title>
+    <StaticImage alt="The food" src = { img }/> 
+  </RecipeHolder>
+)
+
+ /* return (
     
     <>
       <h2>{data.nodeFood.title}</h2>
@@ -34,6 +46,7 @@ data.nodeFood.tags.forEach(( {name}, index ) => {
 
     </>
     )}
-
+*/
+ }
 
 export default pageTemplate 
