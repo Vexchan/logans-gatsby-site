@@ -6,9 +6,9 @@ import {
 
 export default function Title({ children }) {
     return (
-        <h1 className="heading" style={ headingStyles} >
-             <motion.heading
-                animate={{ x: [50, 150, 50], opacity: 1, scale: 1 }}
+        <h1 className="heading" style={ headingStyles } >
+             <motion.h1 className="heading" style= { headingStyles }
+                animate={{ x: [50, 30, 50], opacity: 1, scale: 1 }}
                 transition={{
                     duration: 5,
                     delay: 0.3,
@@ -18,7 +18,7 @@ export default function Title({ children }) {
                 whileHover={{ scale: 1.2 }}
                 >
                 { children }
-            </motion.heading>
+            </motion.h1>
         </h1>
     )
 }

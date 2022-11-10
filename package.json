@@ -20,12 +20,14 @@
     "gatsby": "^4.22.1",
     "gatsby-plugin-image": "^2.23.0",
     "gatsby-plugin-mdx": "^4.2.0",
+    "gatsby-plugin-react-helmet": "^6.0.0",
     "gatsby-plugin-sharp": "^4.23.0",
     "gatsby-source-filesystem": "^4.23.0",
     "gatsby-source-graphql": "^4.24.0",
     "gatsby-transformer-sharp": "^4.23.0",
     "python": "0.0.4",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react-dom": "^18.1.0",
+    "react-helmet": "^6.1.0"
   }
 }

@@ -1,26 +1,47 @@
 .container {
-    margin: auto;
-    max-width: 500px;
-    font-family: sans-serif;
-  }
-  
+  margin: auto;
+  max-width: 500px;
+  font-family: sans-serif;
+  min-height: 600px;
+}
+
 .heading {
-    color: rebeccapurple;
-  }
+  color: rebeccapurple;
+}
+
 .nav-links {
-    display: flex;
-    list-style: none;
-    padding-left: 0;
-  }
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+
 .nav-link-item {
-    padding-right: 2rem;
-  }
+  padding-right: 11.7rem;
+}
+
 .nav-link-text {
-    color: black;
-  }
+  color: black;
+}
+
 .site-title {
-    font-size: 3rem;
-    color: gray;
-    font-weight: 700;
-    margin: 3rem 0;
-  }
+  width: 35%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-title {
+  width: 30%;
+  margin-left: 34.5%;
+  font-family: Courier, monospace;
+  background-color: rgb(60, 57, 57);
+  color: white;
+  border-radius: 25px;
+  text-align: center;
+}
+
+.line-Width {
+  border-bottom: 5px solid black;
+  margin-top: 10%;
+  width: 90%;
+}
