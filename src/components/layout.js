@@ -5,19 +5,14 @@ import {
   navLinks,
   navLinkItem,
   navLinkText,
+  navImage
 } from './layout.module.css'
 import { Link, useStaticQuery, graphql } from 'gatsby'
+import homeButton from '../images/homeIcon.png'
+import aboutButton from '../images/aboutIcon.png'
+import blogButton from '../images/blogIcon.png'
 
 const Layout = ({ pageTitle, children }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
   return (
     <div className={container}>
       <h1 className={heading}>{pageTitle}</h1>
@@ -25,17 +20,17 @@ const Layout = ({ pageTitle, children }) => {
         <ul className={navLinks}>
           <li className={navLinkItem}>
             <Link to="/" className={navLinkText}>
-              Home
+              <img className={navImage} src={homeButton} alt="Home" />
             </Link>
           </li>
           <li className={navLinkItem}>
             <Link to="/about" className={navLinkText}>
-              About
+              <img className={navImage} src={aboutButton} alt="About" />
             </Link>
           </li>
           <li className={navLinkItem}>
             <Link to="/blog" className={navLinkText}>
-              Blog
+            <img className={navImage} src={blogButton} alt="Blog" />
             </Link>
           </li>
         </ul>

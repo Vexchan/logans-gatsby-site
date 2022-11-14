@@ -6,6 +6,7 @@ import Seo from '../components/seo'
 import { motion } from "framer-motion";
 import { siteTitle, pageTitle, lineWidth } from '../components/layout.module.css'
 import earthGIF from '../gifs/earthSpin.gif'
+import titleWebsite from '../images/titleWebsite.png'
 
 const IndexPage = () => {
   return (
@@ -26,19 +27,15 @@ const IndexPage = () => {
         </motion.div>
         <br></br><br></br> 
         <hr className={lineWidth}></hr>
-         <br></br><br></br><br></br><br></br><br></br><br></br> 
-      <h1 className ={pageTitle}> Upfront Ideas </h1>
+        <br></br><br></br><br></br><br></br>
+        <img className={pageTitle} src={titleWebsite} alt="Out of this world" />
       <Layout pageTitle="">
-        <p>I'm making this by following the Gatsby Tutorial.</p>
         <img src={earthGIF} alt="Earth spinning in space" />
 
       </Layout>
     </HomePage>
   )
 }
-
-const scrollingElement = (document.scrollingElement || document.body);
-scrollingElement.scrollTop = scrollingElement.scrollHeight;
 
 export const Head = () => <Seo title="Home Page" />
 

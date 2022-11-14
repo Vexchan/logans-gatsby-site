@@ -10,13 +10,18 @@
 }
 
 .nav-links {
-  display: flex;
+  display:inline-flex;
   list-style: none;
   padding-left: 0;
 }
 
 .nav-link-item {
-  padding-right: 11.7rem;
+  padding-right: 7rem;
+}
+
+.nav-Image {
+  width: 100px;
+  height: 38px;
 }
 
 .nav-link-text {
@@ -31,13 +36,10 @@
 }
 
 .page-title {
-  width: 30%;
-  margin-left: 34.5%;
-  font-family: Courier, monospace;
-  background-color: rgb(60, 57, 57);
-  color: white;
-  border-radius: 25px;
-  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 .line-Width {
@@ -45,3 +47,6 @@
   margin-top: 10%;
   width: 90%;
 }
+
+/* Below is imported code for the background */
+
